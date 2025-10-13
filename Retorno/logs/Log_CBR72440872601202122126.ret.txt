@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72440872601202122126.ret"
+""
+"Cadastrado título novo: 9000005849 2093 - METALURGICA VARZEA P 29/01/2021 RG 168,51 0"
+"Cadastrado título novo: 9000005850 3545 - TEXTIL CARUARU LTDA. 29/01/2021 RG 125,24 0"
+"Cadastrado título novo: 9000005851 472 - LINDE GASES LTDA 26/02/2021 RG 980,85 0"

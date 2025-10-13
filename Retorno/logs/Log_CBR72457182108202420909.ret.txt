@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72457182108202420909.ret"
+""
+"Cadastrado título novo: 9000008166 3323 - HORTOLANDIA INCORPOR 30/08/2024 RG 1688,54 0"
+"ERRO! Operação desconhecida: 9000008162 153 - CONDOMINIO BOSQUE DOS 31/08/2024 VC 1535,61 0"

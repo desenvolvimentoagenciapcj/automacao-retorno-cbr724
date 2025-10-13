@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72444791211202114302.ret"
+""
+"Cadastrado título novo: 9000006673 1827 - POSTO E RESTAURANTE 30/11/2021 RG 2277 0"
+"Pago título: 2118003936 4129 - TERRAPLANAGEM PARAI 30/11/2021 LQ 298,07 298,07"

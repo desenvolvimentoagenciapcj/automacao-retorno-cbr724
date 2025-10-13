@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72455332602202425518.ret"
+""
+"Cadastrado título pago: 9000008030 5509 - IRON MOUNTAIN DO BRA 29/02/2024 LQ 320,11 320,11"
+"Cadastrado título pago: 9000008032 3214 - S.ZANARDI EMPREENDIM 29/02/2024 LQ 819,99 819,99"

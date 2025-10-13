@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245094603202325130.ret"
+""
+"Ignorado cancelamento automático título: 9000006824 1105 - RECAM RC LTDA 31/01/2023 BX 997,66 0"
+"Ignorado cancelamento automático título: 9000007316 5339 - GILBERTO CARLOS FALC 31/01/2023 BX 512,61 0"

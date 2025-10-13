@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72451162903202312827.ret"
+""
+"Cadastrado título novo: 9000007368 2497 - CARVALHEIRA INDUSTRI 31/03/2023 RG 2888,61 0"
+"Pago título: 9000007367 1133 - AIR LIQUIDE BRASIL L 31/03/2023 LQ 430,17 430,17"

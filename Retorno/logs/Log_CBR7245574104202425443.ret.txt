@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245574104202425443.ret"
+""
+"Cadastrado título novo: 9000008067 2988 - K e G INDUSTRIA E CO 30/04/2024 RG 290,85 0"
+"Cadastrado título novo: 9000008068 5607 - ASSOCIACAO DE MORADO 30/04/2024 RG 352,74 0"

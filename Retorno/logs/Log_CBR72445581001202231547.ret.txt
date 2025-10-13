@@ -1,0 +1,6 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72445581001202231547.ret"
+""
+"Cadastrado título novo: 9000006795 7342 - WATER PARK SAO PEDRO 31/01/2022 RG 9501,21 0"
+"Cadastrado título novo: 9000006796 3993 - PLATANO CONSTRUCAO E 31/01/2022 RG 840,77 0"
+"Cadastrado título novo: 9000006797 392 - CONDOMINIO SHOPPING C 31/01/2022 RG 1209,81 0"
+"Cadastrado título novo: 9000006798 411 - IOCHPE-MAXION S/A 31/01/2022 RG 662,1 0"

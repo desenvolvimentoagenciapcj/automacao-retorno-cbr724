@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72460662205202521201.ret"
+""
+"Cadastrado título novo: 9000008589 1160 - OPERSAN RESIDUOS IND 30/05/2025 RG 828,45 0"
+"Pago título: 9000008556 5865 - CONDOMINIO VILLA UNI 30/05/2025 LQ 982,06 982,06"

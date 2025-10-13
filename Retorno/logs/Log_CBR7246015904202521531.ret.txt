@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7246015904202521531.ret"
+""
+"Cadastrado título novo: 9000008539 7742 - RHODIA BRASIL S.A. 30/04/2025 RG 7541,51 0"
+"Cadastrado título novo: 9000008540 3848 - WMB SUPERMERCADOS DO 30/04/2025 RG 1474,78 0"
+"Cadastrado título novo: 9000008541 3825 - WMB SUPERMERCADOS DO 30/04/2025 RG 1529,44 0"

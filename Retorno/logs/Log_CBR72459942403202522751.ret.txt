@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72459942403202522751.ret"
+""
+"Cadastrado título novo: 9000008515 434 - KSPG AUTOMOTIVE BRAZI 30/04/2025 RG 14967,64 0"
+"Cadastrado título novo: 9000008516 4481 - CLARIPEL INDUSTRIA D 31/03/2025 RG 10379,89 0"

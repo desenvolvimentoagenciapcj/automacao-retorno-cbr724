@@ -1,0 +1,7 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7244095102202125206.ret"
+""
+"Cadastrado título novo: 9000005856 5443 - ASSOC DOS PROP E MOR 26/02/2021 RG 219,84 0"
+"Cadastrado título novo: 9000005857 5443 - ASSOC DOS PROP E MOR 31/03/2021 RG 219,84 0"
+"Cadastrado título novo: 9000005858 5443 - ASSOC DOS PROP E MOR 30/04/2021 RG 219,84 0"
+"Cadastrado título novo: 9000005859 4280 - YARA BRASIL FERTILIZ 26/02/2021 RG 266,55 0"
+"Ignorado cancelamento automático título: 9000004941 826 - DEPARTAMENTO AUTONOMO 28/12/2020 BX 42225,78 0"

@@ -1,0 +1,7 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72441101102202113619.ret"
+""
+"Cadastrado título novo: 9000005873 1735 - GRUTA DOS ANOES TURI 26/02/2021 RG 131,18 0"
+"Cadastrado título novo: 9000005874 4845 - BARDUCHI BARDUCHI LT 26/02/2021 RG 243,31 0"
+"Cadastrado título novo: 9000005875 3680 - T e K LOCACOES DE QU 26/02/2021 RG 224,1 0"
+"Cadastrado título novo: 9000005876 2868 - IGREJA EVANGELICA AS 26/02/2021 RG 544,33 0"
+"Cadastrado título novo: 9000005877 4036 - DHL LOGISTICS (BRAZI 31/03/2021 RG 2271,11 0"

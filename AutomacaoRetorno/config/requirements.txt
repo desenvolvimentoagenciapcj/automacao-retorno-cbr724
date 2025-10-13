@@ -1,0 +1,8 @@
+# Dependências Essenciais - Versão Simplificada
+watchdog==3.0.0
+pyodbc==4.0.39
+pyyaml==6.0.1
+colorama==0.4.6
+psutil==5.9.8
+plyer==2.1.0
+schedule==1.2.2

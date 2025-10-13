@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72457121608202420652.ret"
+""
+"Cadastrado título novo: 9000008153 1154 - GREENBRIER MAXION EQ 30/08/2024 RG 654,24 0"
+"Cadastrado título novo: 9000008154 4818 - NOTRE DAME INTERMEDI 30/08/2024 RG 676,34 0"
+"Cadastrado título novo: 9000008155 5367 - GOODMAN VIRACOPOS EM 30/08/2024 RG 1332,8 0"

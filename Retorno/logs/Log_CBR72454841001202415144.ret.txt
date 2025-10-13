@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72454841001202415144.ret"
+""
+"Cadastrado título novo: 9000008013 2444 - TNT MERCURIO CARGAS 31/01/2024 RG 468,46 0"
+"Cadastrado título novo: 9000008014 5509 - IRON MOUNTAIN DO BRA 31/01/2024 RG 316,93 0"

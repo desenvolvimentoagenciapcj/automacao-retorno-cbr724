@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245701808202420836.ret"
+""
+"Cadastrado título novo: 9000008140 2301 - DRYLLER INDUSTRIA E 30/08/2024 RG 1197,89 0"
+"Cadastrado título novo: 9000008142 1733 - MAG SAC EMBALAGENS L 30/08/2024 RG 1370,05 0"

@@ -1,0 +1,6 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72459231701202521713.ret"
+""
+"Cadastrado título novo: 9000008488 1791 - MAHLE METAL LEVE S A 31/01/2025 RG 955,69 0"
+"Cadastrado título novo: 9000008489 2141 - SEARA ALIMENTOS S/A 31/01/2025 RG 2307,29 0"
+"Cadastrado título novo: 9000008490 4887 - RAIZEN ENERGIA S.A. 31/01/2025 RG 336,61 0"
+"Cadastrado título novo: 9000008491 2360 - ORION COMERCIO DE MI 31/01/2025 RG 1116,04 0"

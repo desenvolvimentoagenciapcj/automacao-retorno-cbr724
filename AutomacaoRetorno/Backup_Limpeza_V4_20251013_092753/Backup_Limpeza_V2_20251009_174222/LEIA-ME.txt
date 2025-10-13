@@ -1,0 +1,84 @@
+# 🤖 Sistema de Automação - CBR724 (VERSÃO ENXUTA)
+
+Sistema automático para processamento de arquivos de retorno bancário CBR724.
+
+## ✨ PROJETO OTIMIZADO - APENAS 6 ARQUIVOS ESSENCIAIS
+
+19 arquivos antigos movidos para backup. Sistema agora é **limpo e direto**!
+
+---
+
+## 📦 Arquivos
+
+| Arquivo | Função |
+|---------|--------|
+| `processador_cbr724.py` | Processa CBR724 |
+| `integrador_access.py` | Integra Access |
+| `monitor_retornos.py` | Monitor automático |
+| `INICIAR_MONITOR.bat` | ⚡ INICIA TUDO |
+| `GUIA_RAPIDO.txt` | Guia visual |
+| `requirements.txt` | Dependências |
+
+---
+
+## 🚀 COMO USAR (SIMPLES E RÁPIDO)
+
+### ▶️ INICIAR (3 MODOS)
+Opção 1: `INICIAR_MONITOR.bat` → Escolhe o modo (visível/minimizado/oculto)
+Opção 2: `INICIAR_MONITOR_MINIMIZADO.bat` → Inicia minimizado
+Opção 3: `INICIAR_MONITOR_OCULTO.bat` → Inicia oculto (RECOMENDADO!)
+
+### ⏸️ PARAR
+Duplo-clique: `PARAR_MONITOR.bat` (ou Ctrl+C se estiver visível)
+
+### 📊 VERIFICAR STATUS
+Duplo-clique: `STATUS_MONITOR.bat`
+
+### 📁 PROCESSAR ARQUIVOS
+Coloque arquivos `.ret` em: `D:\Teste_Cobrança_Acess\Retorno`
+
+**PRONTO! Sistema processa automaticamente!** ✨
+
+💡 **DICA:** Use o modo OCULTO para deixar rodando 24/7 sem janelas abertas!
+
+---
+
+## 📁 Estrutura
+
+```
+AutomacaoRetorno/              ← Scripts
+├── *.py (3 arquivos)
+└── INICIAR_MONITOR.bat
+
+Retorno/                       ← Monitorado
+├── (coloque .ret aqui)
+├── Processados/              ← Sucesso
+└── Erro/                     ← Erros
+```
+
+---
+
+## 📝 Logs
+
+Veja em: `logs/monitor_retornos.log`
+
+---
+
+## 🆘 Problemas?
+
+1. **Arquivo não processa** → Veja o log
+2. **Access aberto** → Feche o Access
+3. **Erro permissão** → Execute como Admin
+
+---
+
+## 💡 Dicas
+
+✅ Feche Access antes de processar
+✅ Sistema ignora IEDCBR automaticamente  
+✅ Pode processar vários arquivos de uma vez
+✅ Data vem do arquivo, não de hoje!
+
+---
+
+**Documentação completa:** `GUIA_RAPIDO.txt`

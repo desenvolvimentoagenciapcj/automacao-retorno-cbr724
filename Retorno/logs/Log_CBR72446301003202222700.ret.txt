@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72446301003202222700.ret"
+""
+"Cadastrado título novo: 9000006848 1337 - FABIANA APARECIDA HE 31/03/2022 RG 779,33 0"
+"Cadastrado título novo: 9000006849 5443 - ASSOC DOS PROP E MOR 31/03/2022 RG 331,63 0"
+"Pago título: 9000006738 5443 - ASSOC DOS PROP E MOR 28/02/2022 LQ 318,72 326,15"

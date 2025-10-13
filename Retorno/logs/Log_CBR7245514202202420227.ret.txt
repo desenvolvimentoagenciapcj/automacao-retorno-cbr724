@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245514202202420227.ret"
+""
+"Ignorado cancelamento automático título: 9000007763 2380 - ANTONIO BARBUTTI ME 29/12/2023 BX 355,34 0"
+"Ignorado cancelamento automático título: 9000007978 869 - COMPANHIA ULTRAGAZ S/ 29/12/2023 BX 229 0"
+"Ignorado cancelamento automático título: 9000007983 5481 - RONALD RICCI JUNIOR 29/12/2023 BX 64,83 0"

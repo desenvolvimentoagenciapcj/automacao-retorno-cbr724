@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72440651101202125207.ret"
+""
+"Cadastrado título novo: 9000005827 1046 - BRK AMBIENTAL - LIME 29/01/2021 RG 98990,72 0"
+"Cadastrado título novo: 9000005828 3954 - MARCO ANTONIO TONOLI 29/01/2021 RG 293,24 0"

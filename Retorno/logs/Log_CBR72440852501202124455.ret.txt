@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72440852501202124455.ret"
+""
+"Cadastrado título novo: 9000005848 2375 - PRODUTOS ALIMENTICIO 26/02/2021 RG 888,98 0"
+"Pago título: 9000005812 984 - DOM PEDRO EMPREENDIME 29/01/2021 LQ 290 290"

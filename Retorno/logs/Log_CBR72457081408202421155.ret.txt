@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72457081408202421155.ret"
+""
+"Cadastrado título novo: 9000008149 7707 - SORVETES JUNDIA INDU 30/08/2024 RG 964,32 0"
+"Cadastrado título novo: 9000008150 3030 - TEXTIL GL LTDA 30/08/2024 RG 781,36 0"

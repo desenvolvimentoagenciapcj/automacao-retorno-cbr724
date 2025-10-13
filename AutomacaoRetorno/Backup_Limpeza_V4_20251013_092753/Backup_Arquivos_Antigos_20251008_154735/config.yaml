@@ -1,0 +1,35 @@
+# Configurações do Sistema de Automação de Retorno Bancário - VERSÃO SIMPLIFICADA
+# ================================================================================
+
+# Configurações dos Diretórios
+diretorios:
+  entrada: "D:\\Teste_Cobrança_Acess\\Retorno"          # Pasta onde chegam os arquivos de retorno CBR724
+  processados: "D:\\Teste_Cobrança_Acess\\Retorno\\Processados"  # Pasta para arquivos já processados
+  erro: "D:\\Teste_Cobrança_Acess\\Retorno\\Erro"                # Pasta para arquivos com erro
+  backup: "D:\\Teste_Cobrança_Acess\\Backup"                      # Pasta de backup dos bancos
+  logs: "logs"                                                     # Pasta de logs (relativa)
+
+# Configurações dos Bancos Access
+bancos:
+  # Banco de baixas - onde importa os arquivos de retorno
+  baixa:
+    caminho: "D:/Teste_Cobrança_Acess/dbBaixa2025.accdb"
+    tabela: "pcjTITULOS"
+  # Banco de cobrança - DESABILITADO (tem dependência de H:\CobrancaPCJ)
+  cobranca:
+    ativo: false  # Mudou para false - não será usado
+    caminho: "D:/Teste_Cobrança_Acess/Cobranca2019.accdb"
+    tabela_cobranca: "pcjCOBRANCA"
+    tabela_movimento: "pcjMOVIMENTO"
+  backup_antes_processo: true
+
+# Configurações de Processamento
+processamento:
+  formato_arquivo: "CBR724"  # CBR724 (160 chars) - formato dos arquivos de retorno
+  validar_duplicatas: true
+  prefixo_arquivo: "CBR724"  # Apenas arquivos que começam com CBR724
+
+# Configurações de Log
+log:
+  nivel: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  formato: "%(asctime)s - %(levelname)s - %(message)s"

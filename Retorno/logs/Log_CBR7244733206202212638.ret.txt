@@ -1,0 +1,7 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7244733206202212638.ret"
+""
+"Pago título: 9000006606 2757 - CARAVITA EMPRESA DE 31/05/2022 LQ 829,16 846,29"
+"Ignorado cancelamento automático título: 9000005902 5295 - CUSCOVILLE EMPREENDI 29/04/2022 BX 646,25 0"
+"Ignorado cancelamento automático título: 9000006855 5413 - SECRETARIA DA ADMINI 29/04/2022 BX 15506,47 0"
+"Ignorado cancelamento automático título: 9000006856 5413 - SECRETARIA DA ADMINI 29/04/2022 BX 20441,54 0"
+"Ignorado cancelamento automático título: 9000006857 5413 - SECRETARIA DA ADMINI 29/04/2022 BX 16578,1 0"

@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72459982703202522405.ret"
+""
+"Cadastrado título novo: 9000008517 5350 - CONDOMINIO RESERVA D 31/03/2025 RG 787,24 0"
+"Cadastrado título novo: 9000008518 2647 - NICKELTEC IND E COM 31/03/2025 RG 4007,57 0"

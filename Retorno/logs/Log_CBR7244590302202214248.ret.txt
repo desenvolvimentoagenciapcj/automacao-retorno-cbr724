@@ -1,0 +1,8 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7244590302202214248.ret"
+""
+"Pago título: 9000006812 2626 - FIH DO BRASIL INDUST 28/02/2022 LQ 1183,78 1183,78"
+"Ignorado cancelamento automático título: 9000006306 5486 - ASSOCIACAO DO BRAGAN 31/12/2021 BX 591,85 0"
+"Ignorado cancelamento automático título: 9000006685 4812 - MARCIA MUSSOLINO TAK 31/12/2021 BX 278,05 0"
+"Ignorado cancelamento automático título: 9000006694 2385 - SOLENIS ESPECIALIDAD 31/12/2021 BX 858,26 0"
+"Ignorado cancelamento automático título: 9000006702 4872 - CONDOMINIO CAMPINAS 31/12/2021 BX 1508,28 0"
+"Ignorado cancelamento automático título: 9000006756 2495 - HOTEL NACIONAL INN L 31/12/2021 BX 866,7 0"

@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72446031602202214258.ret"
+""
+"Cadastrado título novo: 9000006833 3245 - A e J LAVANDERIA LTD 28/02/2022 RG 2738,57 0"
+"Pago título: 9000006832 7333 - TEXPAK INDUSTRIA DE 28/02/2022 LQ 206,23 206,23"

@@ -1,0 +1,7 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245546603202414915.ret"
+""
+"Ignorado cancelamento automático título: 9000007993 4197 - ASSOCIACAO DOS PROPR 31/01/2024 BX 5574,27 0"
+"Ignorado cancelamento automático título: 9000007994 1783 - CESAR RODRIGO ZUMSTE 31/01/2024 BX 330,14 0"
+"Ignorado cancelamento automático título: 9000008012 1762 - ASSOC DOS ADQUIRENTE 31/01/2024 BX 270,77 0"
+"Ignorado cancelamento automático título: 9000008014 5509 - IRON MOUNTAIN DO BRA 31/01/2024 BX 316,93 0"
+"Ignorado cancelamento automático título: 9000008024 1598 - ARTEC PISOS E REVEST 31/01/2024 BX 259,19 0"

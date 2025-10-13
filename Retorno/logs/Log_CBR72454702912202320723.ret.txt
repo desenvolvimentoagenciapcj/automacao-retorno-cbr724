@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72454702912202320723.ret"
+""
+"Cadastrado título novo: 9000007990 495 - NEUMAYER TEKFOR AUTOM 04/01/2024 RG 231,71 0"
+"Cadastrado título novo: 9000007991 4048 - JOSE SERIPIERI FILHO 31/01/2024 RG 1281,34 0"
+"Cancelado título: 2230003458 495 - NEUMAYER TEKFOR AUTOM 22/12/2023 BX 226,22 0"

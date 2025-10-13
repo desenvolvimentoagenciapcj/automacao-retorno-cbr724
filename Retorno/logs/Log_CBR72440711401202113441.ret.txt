@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72440711401202113441.ret"
+""
+"Cadastrado título novo: 9000005832 1577 - IMERYS ITATEX SOLUCO 29/01/2021 RG 760,77 0"
+"Pago título: 9000005829 3639 - ACQUARAM MEDICAO DE 29/01/2021 LQ 569,24 569,24"

@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72460581605202521123.ret"
+""
+"Cadastrado título novo: 9000008582 7835 - ASSOC. DOS PROPRIETA 30/05/2025 RG 3205,48 0"
+"Cadastrado título novo: 9000008583 938 - MIRACEMA NUODEX INDUS 30/05/2025 RG 3100,37 0"

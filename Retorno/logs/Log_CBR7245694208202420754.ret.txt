@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245694208202420754.ret"
+""
+"Cadastrado título novo: 9000008127 7132 - REDE DOM PEDRO DE PO 30/08/2024 RG 3398,62 0"
+"Cadastrado título novo: 9000008128 1094 - BUCKMAN LABORATORIOS 30/08/2024 RG 4820,37 0"

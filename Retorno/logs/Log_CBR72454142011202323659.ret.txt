@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72454142011202323659.ret"
+""
+"Pago título: 2230005329 2712 - PECANHA & HELENA TRA 30/11/2023 LQ 873,1 873,1"
+"Pago título: 2230006013 3704 - I.S. COMERCIO DE AGU 30/11/2023 LQ 373,28 373,28"

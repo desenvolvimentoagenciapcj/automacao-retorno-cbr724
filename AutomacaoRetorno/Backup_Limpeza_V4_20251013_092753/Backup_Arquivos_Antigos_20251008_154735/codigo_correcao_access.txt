@@ -1,0 +1,43 @@
+
+' ============================================================
+' CÓDIGO VBA PARA REMOVER TABELAS VINCULADAS
+' Execute este código no Access (Alt+F11 > Módulo > Colar)
+' ============================================================
+
+Sub RemoverTabelasVinculadas()
+    Dim db As DAO.Database
+    Dim tdf As DAO.TableDef
+    Dim contador As Integer
+    
+    Set db = CurrentDb()
+    contador = 0
+    
+    ' Percorre todas as tabelas
+    For Each tdf In db.TableDefs
+        ' Verifica se é tabela vinculada (tem Connect)
+        If Len(tdf.Connect) > 0 Then
+            Debug.Print "Removendo: " & tdf.Name & " (" & tdf.Connect & ")"
+            db.TableDefs.Delete tdf.Name
+            contador = contador + 1
+        End If
+    Next tdf
+    
+    MsgBox "Removidas " & contador & " tabelas vinculadas!", vbInformation
+    Set db = Nothing
+End Sub
+
+Sub DesabilitarStartup()
+    ' Desabilita formulário de inicialização
+    On Error Resume Next
+    Application.SetOption "Start Form Name", ""
+    MsgBox "Formulário de startup desabilitado!", vbInformation
+End Sub
+
+Sub ListarReferencias()
+    ' Lista todas as referências do projeto
+    Dim ref As Reference
+    Debug.Print "=== REFERÊNCIAS ==="
+    For Each ref In Application.References
+        Debug.Print ref.Name & " - " & ref.FullPath
+    Next ref
+End Sub

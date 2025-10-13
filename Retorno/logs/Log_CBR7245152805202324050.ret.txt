@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245152805202324050.ret"
+""
+"Cadastrado título novo: 9000007378 1354 - SILGAN DISP. SYSTEMS 31/05/2023 RG 3338,97 0"
+"Cadastrado título novo: 9000007379 3701 - ASSOCIACAO DE SOCIOS 31/05/2023 RG 1479,59 0"
+"Cadastrado título novo: 9000007380 7376 - CABRINI INDUSTRIA DE 31/05/2023 RG 799,15 0"

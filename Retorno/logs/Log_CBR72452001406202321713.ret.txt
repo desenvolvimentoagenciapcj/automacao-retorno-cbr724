@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72452001406202321713.ret"
+""
+"Cadastrado título novo: 9000007455 2796 - BASALTO PEDREIRA E P 30/06/2023 RG 554,54 0"
+"Cadastrado título novo: 9000007456 3785 - PEDRA DA MATA EMPREE 30/06/2023 RG 294,42 0"

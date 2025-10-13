@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7244174604202114228.ret"
+""
+"Cadastrado título novo: 9000005923 330 - DURATEX S/A 30/04/2021 RG 2387,84 0"
+"Cadastrado título novo: 9000005924 2391 - DURATEX S/A 30/04/2021 RG 3665,63 0"

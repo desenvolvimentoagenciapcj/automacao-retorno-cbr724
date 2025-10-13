@@ -1,0 +1,6 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245976703202522227.ret"
+""
+"Pago título: 9000008487 2391 - DEXCO S.A. 28/02/2025 LQ 21523,14 22003,81"
+"Ignorado cancelamento automático título: 9000008471 5630 - HM 27 EMPREENDIMENTO 31/01/2025 BX 2074,73 0"
+"Ignorado cancelamento automático título: 9000008483 452 - WHIRLPOOL S/A 31/01/2025 BX 6433,42 0"
+"Ignorado cancelamento automático título: 9000008488 1791 - MAHLE METAL LEVE S A 31/01/2025 BX 955,69 0"

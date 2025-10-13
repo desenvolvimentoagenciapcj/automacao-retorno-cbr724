@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72459181401202521328.ret"
+""
+"Cadastrado título novo: 9000008485 7758 - ASSOC DOS PROP DO LO 31/01/2025 RG 258,7 0"
+"Cadastrado título novo: 9000008486 7758 - ASSOC DOS PROP DO LO 28/02/2025 RG 258,7 0"

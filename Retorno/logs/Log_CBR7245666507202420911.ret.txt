@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245666507202420911.ret"
+""
+"Pago título: 9000008107 5617 - DINIZ COMERCIO ATACA 05/07/2024 LQ 282,03 282,03"
+"Ignorado cancelamento automático título: 9000008085 1783 - CESAR RODRIGO ZUMSTE 31/05/2024 BX 343,55 0"

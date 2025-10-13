@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72440751801202124423.ret"
+""
+"Cadastrado título novo: 9000005834 5295 - CUSCOVILLE EMPREENDI 29/01/2021 RG 646,25 0"
+"Pago título: 9000005820 3925 - RK EMPREENDIMENTOS I 29/01/2021 LQ 567,75 567,75"

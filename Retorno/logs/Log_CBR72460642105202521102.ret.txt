@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72460642105202521102.ret"
+""
+"Cadastrado título novo: 9000008586 1246 - CLUBE JUNDIAIENSE 30/05/2025 RG 3171,6 0"
+"Cadastrado título novo: 9000008587 2692 - SERVICO SOCIAL DA IN 30/05/2025 RG 812,15 0"
+"Cadastrado título novo: 9000008588 14 - BORGWARNER INDUSTRIA E 30/05/2025 RG 331,94 0"

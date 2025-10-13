@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72447061205202212508.ret"
+""
+"Cadastrado título novo: 9000006866 807 - ROBERTO TADAKATSU SAT 31/05/2022 RG 716,94 0"
+"Cadastrado título novo: 9000006867 330 - DURATEX S/A 31/05/2022 RG 5307,4 0"

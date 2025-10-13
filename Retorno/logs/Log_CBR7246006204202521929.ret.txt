@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7246006204202521929.ret"
+""
+"Pago título: 9000008501 3701 - ASSOCIACAO DE SOCIOS 31/03/2025 LQ 5178,81 5285,82"
+"ERRO! Operação desconhecida: 9000008532 3644 - IBG CRYO INDUSTRIA D 19/12/2025 VC 900,88 0"

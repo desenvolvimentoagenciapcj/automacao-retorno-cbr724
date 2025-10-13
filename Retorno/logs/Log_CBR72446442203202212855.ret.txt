@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72446442203202212855.ret"
+""
+"Cadastrado título novo: 9000006855 5413 - SECRETARIA DA ADMINI 29/04/2022 RG 15506,47 0"
+"Cadastrado título novo: 9000006856 5413 - SECRETARIA DA ADMINI 29/04/2022 RG 20441,54 0"
+"Cadastrado título novo: 9000006857 5413 - SECRETARIA DA ADMINI 29/04/2022 RG 16578,1 0"

@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72451551005202315109.ret"
+""
+"Cadastrado título novo: 9000007383 4870 - ASSOCIACAO MELHORES 31/05/2023 RG 2765,32 0"
+"Cadastrado título novo: 9000007384 7704 - ASS DOS PROPRIETARIO 31/05/2023 RG 2703,3 0"
+"Cadastrado título novo: 9000007385 3439 - CSHG REAL ESTATE FUN 31/05/2023 RG 1638,46 0"

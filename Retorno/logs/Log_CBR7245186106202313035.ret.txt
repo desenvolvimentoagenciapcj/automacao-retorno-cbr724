@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR7245186106202313035.ret"
+""
+"Cadastrado título novo: 9000007449 5939 - CRYOVAC BRASIL LTDA 30/06/2023 RG 1252,88 0"
+"Ignorado cancelamento automático título: 9000006827 1105 - RECAM RC LTDA 28/04/2023 BX 997,66 0"
+"Ignorado cancelamento automático título: 9000007319 5339 - GILBERTO CARLOS FALC 28/04/2023 BX 512,61 0"

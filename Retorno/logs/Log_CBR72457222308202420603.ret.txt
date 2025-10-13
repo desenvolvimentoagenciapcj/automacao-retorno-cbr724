@@ -1,0 +1,4 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72457222308202420603.ret"
+""
+"Cadastrado título novo: 9000008170 2105 - SWISS TUBOS E CONEXO 30/08/2024 RG 542,52 0"
+"Cadastrado título novo: 9000008171 1325 - PROVINCIA DOS CAPUCH 30/09/2024 RG 308,94 0"

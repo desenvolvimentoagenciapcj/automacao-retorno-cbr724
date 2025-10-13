@@ -1,0 +1,5 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72454982201202423401.ret"
+""
+"Cadastrado título novo: 9000008018 5485 - ASSOC DA INSTITUIDOR 31/01/2024 RG 239 0"
+"Cadastrado título novo: 9000008019 2796 - HIPERMIX BRASIL SP S 31/01/2024 RG 594,54 0"
+"Cancelado título: 2230006656 5464 - INSTITUTO ADVENTISTA 22/12/2023 BX 652 0"

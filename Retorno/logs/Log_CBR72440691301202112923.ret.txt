@@ -1,0 +1,6 @@
+"Log do arquivo \\servidor1\CobrancaPCJ\CobrancaPCJ\Retorno\CBR72440691301202112923.ret"
+""
+"Cadastrado título novo: 9000005829 3639 - ACQUARAM MEDICAO DE 29/01/2021 RG 569,24 0"
+"Cadastrado título novo: 9000005830 907 - SERRA AZUL WATER PARK 29/01/2021 RG 2539,48 0"
+"Cadastrado título novo: 9000005831 104 - SCHOLLE LTDA 29/01/2021 RG 2028,72 0"
+"Cancelado título: 2026100762 901 - GALVANI INDUSTRIA CO 24/12/2020 BX 1011,36 0"
