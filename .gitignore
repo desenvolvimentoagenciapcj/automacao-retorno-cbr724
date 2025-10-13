@@ -32,6 +32,11 @@ logs/*.log
 *.mdb.bak
 *.accdb.bak
 
+# Bancos Access históricos (grandes - mantidos apenas no backup OneDrive)
+SISTEMA COBRANÇA/
+dbBaixa*.accdb
+Cobranca*.accdb
+
 # Arquivos de retorno processados
 Retorno/Processados/
 Retorno/Erro/
