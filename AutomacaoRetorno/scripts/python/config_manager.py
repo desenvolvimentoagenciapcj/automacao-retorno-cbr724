@@ -151,6 +151,31 @@ class Config:
         return self._get_bool('PROCESSAMENTO', 'processar_existentes_ao_iniciar', True)
     
     # =========================================================================
+    # MONITORAMENTO SERVIDOR
+    # =========================================================================
+    
+    @property
+    def monitoramento_servidor_habilitado(self):
+        """Monitoramento de saúde do servidor habilitado?"""
+        if 'MONITORAMENTO_SERVIDOR' not in self.config:
+            return True  # Habilitado por padrão
+        return self._get_bool('MONITORAMENTO_SERVIDOR', 'habilitado', True)
+    
+    @property
+    def monitoramento_intervalo(self):
+        """Intervalo de verificação do servidor (segundos)"""
+        if 'MONITORAMENTO_SERVIDOR' not in self.config:
+            return 300  # 5 minutos por padrão
+        return self.config.getint('MONITORAMENTO_SERVIDOR', 'intervalo_verificacao', fallback=300)
+    
+    @property
+    def monitoramento_alertar_email(self):
+        """Enviar alerta por email quando servidor ficar inacessível?"""
+        if 'MONITORAMENTO_SERVIDOR' not in self.config:
+            return True
+        return self._get_bool('MONITORAMENTO_SERVIDOR', 'alertar_por_email', True)
+    
+    # =========================================================================
     # DIRETÓRIOS
     # =========================================================================
     

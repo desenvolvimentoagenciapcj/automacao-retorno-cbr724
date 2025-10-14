@@ -323,8 +323,16 @@ def processar_arquivos_existentes(event_handler, pasta_entrada):
         logger.info("")
 
 
+def verificar_servidor_acessivel(pasta):
+    """Verifica se o servidor/pasta está acessível"""
+    try:
+        return os.path.exists(pasta) and os.path.isdir(pasta)
+    except:
+        return False
+
+
 def main():
-    """Inicia o monitor automático"""
+    """Inicia o monitor automático com recuperação de falhas"""
     # Log do diretório de trabalho para debug
     logger.info(f"📂 Diretório de trabalho: {os.getcwd()}")
     logger.info(f"📜 Arquivo de log: {cfg.caminho_log_completo}")
@@ -333,6 +341,48 @@ def main():
     pasta_entrada = cfg.pasta_retorno
     pasta_processados = cfg.pasta_processados
     pasta_erro = cfg.pasta_erro
+    
+    # 🆕 VERIFICAR SE SERVIDOR ESTÁ ACESSÍVEL ANTES DE COMEÇAR
+    logger.info("🔍 Verificando conexão com servidor...")
+    if not verificar_servidor_acessivel(pasta_entrada):
+        logger.error("="*80)
+        logger.error("❌ SERVIDOR INACESSÍVEL!")
+        logger.error(f"   Pasta: {pasta_entrada}")
+        logger.error("   ")
+        logger.error("   POSSÍVEIS CAUSAS:")
+        logger.error("   • Servidor offline")
+        logger.error("   • Rede desconectada")
+        logger.error("   • Pasta compartilhada não disponível")
+        logger.error("   ")
+        logger.error("   AÇÃO NECESSÁRIA:")
+        logger.error("   1. Verificar se servidor está ligado")
+        logger.error("   2. Testar acesso manual à pasta")
+        logger.error("   3. Executar novamente após servidor voltar")
+        logger.error("="*80)
+        
+        # Enviar notificação de erro crítico
+        try:
+            notificador_windows = NotificadorWindows()
+            notificador_windows.notificar_erro_critico(
+                "Servidor Inacessível",
+                f"Monitor não pode iniciar.\nPasta não acessível:\n{pasta_entrada}"
+            )
+        except:
+            pass
+        
+        try:
+            notificador_email = NotificadorEmail()
+            notificador_email.notificar_erro(
+                f"SERVIDOR INACESSÍVEL - Monitor Não Iniciou",
+                f"Pasta não acessível: {pasta_entrada}\n\nVerifique conexão de rede e servidor."
+            )
+        except:
+            pass
+        
+        sys.exit(1)
+    
+    logger.info("✅ Servidor acessível - Iniciando monitor...")
+    logger.info("")
     
     # Criar o manipulador de eventos
     event_handler = ProcessadorRetornoHandler(
@@ -357,9 +407,120 @@ def main():
     logger.info("   (Pressione Ctrl+C para parar)")
     logger.info("")
     
+    # 🆕 MONITORAMENTO DE SAÚDE DO SERVIDOR
+    ultima_verificacao = time.time()
+    intervalo_verificacao = cfg.monitoramento_intervalo  # Do config.ini
+    servidor_estava_inacessivel = False
+    alerta_email_enviado = False  # Controla se já enviou alerta por email
+    
     try:
         while True:
             time.sleep(1)
+            
+            # Verificar saúde do servidor conforme configurado
+            if cfg.monitoramento_servidor_habilitado and (time.time() - ultima_verificacao >= intervalo_verificacao):
+                if not verificar_servidor_acessivel(pasta_entrada):
+                    if not servidor_estava_inacessivel:
+                        logger.warning("="*80)
+                        logger.warning("⚠️  ALERTA: Servidor ficou inacessível!")
+                        logger.warning(f"   Pasta: {pasta_entrada}")
+                        logger.warning(f"   Tentando reconectar a cada {intervalo_verificacao}s...")
+                        logger.warning("="*80)
+                        servidor_estava_inacessivel = True
+                        
+                        # Notificar sobre problema - Windows
+                        try:
+                            notificador_windows = NotificadorWindows()
+                            notificador_windows.notificar_erro_critico(
+                                "Servidor Desconectado",
+                                f"Monitor detectou perda de conexão.\nTentando reconectar..."
+                            )
+                        except:
+                            pass
+                        
+                        # Notificar sobre problema - Email (apenas uma vez)
+                        if cfg.monitoramento_alertar_email and not alerta_email_enviado:
+                            try:
+                                notificador_email = NotificadorEmail()
+                                notificador_email.notificar_erro(
+                                    "🚨 SERVIDOR INACESSÍVEL - Monitor em Modo de Espera",
+                                    f"""O sistema detectou que o servidor ficou inacessível.
+                                    
+📂 Pasta Monitorada: {pasta_entrada}
+
+⏰ Horário da Detecção: {time.strftime('%d/%m/%Y %H:%M:%S')}
+
+🔄 Ações Automáticas:
+   • Monitor continuará tentando reconectar
+   • Verificação automática a cada {intervalo_verificacao//60} minutos
+   • Quando servidor voltar, arquivos pendentes serão processados
+
+⚠️  IMPORTANTE:
+   • Arquivos adicionados durante a queda NÃO serão perdidos
+   • Eles serão processados automaticamente quando servidor voltar
+   • Se servidor demorar muito para voltar, considere:
+     1. Verificar se servidor está ligado
+     2. Testar conexão manual: {pasta_entrada}
+     3. Executar .\STATUS.bat para verificar monitor
+
+📧 Você receberá outro email quando servidor for recuperado."""
+                                )
+                                alerta_email_enviado = True
+                                logger.info("📧 Alerta por email enviado sobre servidor inacessível")
+                            except Exception as e:
+                                logger.error(f"Erro ao enviar email de alerta: {e}")
+                else:
+                    if servidor_estava_inacessivel:
+                        logger.info("="*80)
+                        logger.info("✅ SERVIDOR RECUPERADO!")
+                        logger.info("   Processando arquivos pendentes...")
+                        logger.info("="*80)
+                        servidor_estava_inacessivel = False
+                        alerta_email_enviado = False  # Resetar flag para próxima vez
+                        
+                        # Processar arquivos que podem ter chegado durante queda
+                        processar_arquivos_existentes(event_handler, pasta_entrada)
+                        
+                        # Notificar sobre recuperação - Windows
+                        try:
+                            notificador_windows = NotificadorWindows()
+                            notificador_windows.notificar_sucesso(
+                                "Servidor Reconectado",
+                                "Sistema recuperado e processando arquivos pendentes."
+                            )
+                        except:
+                            pass
+                        
+                        # Notificar sobre recuperação - Email
+                        if cfg.monitoramento_alertar_email:
+                            try:
+                                notificador_email = NotificadorEmail()
+                                notificador_email.notificar_sucesso(
+                                    f"✅ SERVIDOR RECUPERADO - Sistema Operacional",
+                                    f"""O servidor voltou a ficar acessível e o sistema foi recuperado.
+
+📂 Pasta Monitorada: {pasta_entrada}
+
+⏰ Horário da Recuperação: {time.strftime('%d/%m/%Y %H:%M:%S')}
+
+✅ Ações Executadas:
+   • Conexão com servidor restaurada
+   • Processados todos os arquivos pendentes
+   • Monitor funcionando normalmente
+
+🎯 Status Atual:
+   • Sistema operacional e monitorando novos arquivos
+   • Todos os arquivos adicionados durante a queda foram processados
+   • Notificações normais voltaram a funcionar
+
+Nenhuma ação manual é necessária. O sistema se recuperou automaticamente."""
+                                )
+                                logger.info("📧 Email de recuperação enviado")
+                            except Exception as e:
+                                logger.error(f"Erro ao enviar email de recuperação: {e}")
+                
+                ultima_verificacao = time.time()
+                
     except KeyboardInterrupt:
         logger.info("")
         logger.info("="*80)

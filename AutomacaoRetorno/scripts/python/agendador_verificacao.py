@@ -64,8 +64,14 @@ class AgendadorVerificacao:
         
         # Configurações do agendamento
         self.habilitado = self._get_config_bool('VERIFICACAO_AGENDADA', 'habilitado', True)
-        self.horario = self.config.config.get('VERIFICACAO_AGENDADA', 'horario', fallback='08:00')
+        self.horario = self.config.config.get('VERIFICACAO_AGENDADA', 'horario', fallback='08:30')
         self.dias_semana = self._get_dias_semana()
+        
+        # Controle de recuperação persistente
+        self.em_recuperacao = False
+        self.hora_inicio_recuperacao = None
+        self.tentativas_recuperacao = 0
+        self.max_tentativas = 6  # 30 minutos (6 tentativas x 5 min)
         
         logger.info("="*80)
         logger.info("📅 AGENDADOR DE VERIFICAÇÃO INICIADO")
@@ -97,6 +103,19 @@ class AgendadorVerificacao:
         
         dias_config = [d.strip().lower() for d in dias_str.split(',')]
         return [dias_map.get(d, d) for d in dias_config if d in dias_map]
+    
+    def servidor_esta_acessivel(self):
+        """
+        Verifica se o servidor está acessível
+        
+        Returns:
+            bool: True se servidor está acessível
+        """
+        try:
+            pasta_retorno = self.config.pasta_retorno
+            return os.path.exists(pasta_retorno) and os.path.isdir(pasta_retorno)
+        except:
+            return False
     
     def monitor_esta_rodando(self):
         """
@@ -172,52 +191,191 @@ class AgendadorVerificacao:
     def verificar_e_agir(self):
         """
         Verifica se o monitor está rodando e age conforme necessário
+        Verificação inteligente: tenta recuperar até 9h antes de desistir
         """
         logger.info("")
         logger.info("="*80)
         logger.info(f"🔍 VERIFICAÇÃO AGENDADA - {datetime.now().strftime('%d/%m/%Y às %H:%M:%S')}")
         logger.info("="*80)
         
-        # Verifica se está rodando
+        hora_atual = datetime.now()
+        hora_limite = hora_atual.replace(hour=9, minute=0, second=0, microsecond=0)
+        
+        # PASSO 1: Verificar servidor
+        servidor_ok = self.servidor_esta_acessivel()
+        if not servidor_ok:
+            logger.warning("⚠️  SERVIDOR INACESSÍVEL!")
+            
+            if not self.em_recuperacao:
+                # Primeira detecção - iniciar processo de recuperação
+                self.em_recuperacao = True
+                self.hora_inicio_recuperacao = hora_atual
+                self.tentativas_recuperacao = 0
+                
+                logger.warning("🔄 Iniciando processo de recuperação...")
+                logger.info(f"   Tentativas a cada 5 minutos até {hora_limite.strftime('%H:%M')}")
+                
+                # Notificar
+                self.notificador_windows.notificar_erro_critico(
+                    "Servidor Inacessível às 8h30",
+                    "Sistema tentará recuperar a cada 5 minutos até 9h"
+                )
+            
+            # Verifica se ainda está dentro do prazo
+            if hora_atual < hora_limite and self.tentativas_recuperacao < self.max_tentativas:
+                self.tentativas_recuperacao += 1
+                logger.info(f"   Tentativa {self.tentativas_recuperacao}/{self.max_tentativas}")
+                logger.info(f"   Próxima verificação em 5 minutos...")
+                
+                # Agenda próxima tentativa daqui a 5 minutos
+                schedule.every(5).minutes.do(self.verificar_e_agir).tag('recuperacao')
+                logger.info("="*80)
+                return
+            else:
+                # Passou das 9h ou esgotou tentativas - DESISTIR
+                logger.error("="*80)
+                logger.error("❌ FALHA CRÍTICA - Servidor continua inacessível")
+                logger.error(f"   Tentativas: {self.tentativas_recuperacao}")
+                logger.error(f"   Horário atual: {hora_atual.strftime('%H:%M')}")
+                logger.error("   AÇÃO MANUAL URGENTE NECESSÁRIA!")
+                logger.error("="*80)
+                
+                # Notificar FALHA CRÍTICA
+                self.notificador_windows.notificar_erro_critico(
+                    "FALHA CRÍTICA - Servidor Inacessível",
+                    f"Servidor continua inacessível após {self.tentativas_recuperacao} tentativas.\nAção manual URGENTE!"
+                )
+                
+                if self.notificador_email.habilitado:
+                    self.notificador_email.notificar_erro(
+                        "🚨 FALHA CRÍTICA - Servidor Inacessível às 9h",
+                        f"""ATENÇÃO: Servidor continua inacessível!
+                        
+⏰ Horário Limite: 9h00
+🔄 Tentativas Realizadas: {self.tentativas_recuperacao}
+📁 Servidor: {self.config.pasta_retorno}
+
+❌ STATUS: Servidor NÃO está acessível
+
+⚠️  AÇÃO URGENTE NECESSÁRIA:
+1. Verificar se servidor \\SERVIDOR1 está ligado
+2. Verificar conexão de rede
+3. Testar acesso manual à pasta
+4. Após correção, executar: .\\PROCESSAR.bat
+
+Arquivos de retorno NÃO estão sendo processados!"""
+                    )
+                
+                # Reset para próximo dia
+                self.em_recuperacao = False
+                schedule.clear('recuperacao')
+                logger.info("="*80)
+                return
+        
+        # PASSO 2: Servidor OK - verificar monitor
         rodando, pid = self.monitor_esta_rodando()
         
-        if rodando:
-            logger.info(f"✅ Monitor está ativo - PID: {pid}")
+        if rodando and servidor_ok:
+            logger.info(f"✅ Sistema OK - Monitor ativo (PID: {pid}) e Servidor acessível")
+            
+            # Se estava em recuperação, notificar sucesso
+            if self.em_recuperacao:
+                logger.info("✅ RECUPERAÇÃO BEM-SUCEDIDA!")
+                logger.info(f"   Recuperado após {self.tentativas_recuperacao} tentativa(s)")
+                
+                self.notificador_windows.notificar_sucesso(
+                    "Sistema Recuperado",
+                    "Monitor ativo e servidor acessível!"
+                )
+                
+                if self.notificador_email.habilitado:
+                    self.notificador_email.notificar_sucesso(
+                        "✅ Sistema Recuperado com Sucesso",
+                        f"""Sistema voltou ao normal!
+                        
+⏰ Horário: {hora_atual.strftime('%H:%M:%S')}
+🔄 Tentativas até recuperar: {self.tentativas_recuperacao}
+
+✅ Monitor: Ativo (PID {pid})
+✅ Servidor: Acessível
+
+Sistema processando retornos normalmente."""
+                    )
+                
+                # Reset
+                self.em_recuperacao = False
+                self.tentativas_recuperacao = 0
+                schedule.clear('recuperacao')
+            
             logger.info("="*80)
             return
         
-        # Monitor NÃO está rodando - alerta e reinicia
+        # PASSO 3: Servidor OK mas monitor NÃO está rodando
         logger.warning("⚠️  MONITOR NÃO ESTÁ RODANDO!")
         logger.info("🔄 Tentando reiniciar automaticamente...")
         
-        # Notifica ANTES de tentar reiniciar
-        self.notificador_windows.notificar_monitor_caiu_reiniciando()
+        if not self.em_recuperacao:
+            self.em_recuperacao = True
+            self.hora_inicio_recuperacao = hora_atual
+            self.tentativas_recuperacao = 0
+            self.notificador_windows.notificar_monitor_caiu_reiniciando()
         
         # Tenta iniciar
         sucesso = self.iniciar_monitor()
         
         if sucesso:
             logger.info("✅ Monitor reiniciado com sucesso!")
-            
-            # Notifica sucesso
             self.notificador_windows.notificar_monitor_reiniciado()
             self.notificador_email.notificar_monitor_iniciado()
             
+            # Reset
+            self.em_recuperacao = False
+            self.tentativas_recuperacao = 0
+            schedule.clear('recuperacao')
         else:
-            logger.error("❌ FALHA ao reiniciar monitor!")
-            logger.error("⚠️  AÇÃO MANUAL NECESSÁRIA!")
-            
-            # Notifica falha crítica
-            self.notificador_windows.notificar_erro_critico(
-                "Falha ao Reiniciar Monitor",
-                "O monitor não está rodando e não foi possível reiniciá-lo automaticamente. Verifique imediatamente!"
-            )
-            
-            if self.notificador_email.habilitado:
-                self.notificador_email.notificar_erro(
-                    "MONITOR CAIU",
-                    "O monitor não está rodando e a tentativa de reinício automático falhou. Ação manual necessária!"
+            # Falhou - verificar se ainda está dentro do prazo
+            if hora_atual < hora_limite and self.tentativas_recuperacao < self.max_tentativas:
+                self.tentativas_recuperacao += 1
+                logger.warning(f"⚠️  Falha ao iniciar - Tentativa {self.tentativas_recuperacao}/{self.max_tentativas}")
+                logger.info("   Próxima tentativa em 5 minutos...")
+                
+                # Agenda próxima tentativa
+                schedule.every(5).minutes.do(self.verificar_e_agir).tag('recuperacao')
+            else:
+                # DESISTIR
+                logger.error("="*80)
+                logger.error("❌ FALHA CRÍTICA - Monitor não iniciou")
+                logger.error(f"   Tentativas: {self.tentativas_recuperacao}")
+                logger.error("   AÇÃO MANUAL URGENTE NECESSÁRIA!")
+                logger.error("="*80)
+                
+                self.notificador_windows.notificar_erro_critico(
+                    "FALHA CRÍTICA - Monitor Não Iniciou",
+                    f"Monitor não iniciou após {self.tentativas_recuperacao} tentativas. Ação manual URGENTE!"
                 )
+                
+                if self.notificador_email.habilitado:
+                    self.notificador_email.notificar_erro(
+                        "🚨 FALHA CRÍTICA - Monitor Não Iniciou às 9h",
+                        f"""ATENÇÃO: Monitor não conseguiu iniciar!
+                        
+⏰ Horário Limite: 9h00
+🔄 Tentativas: {self.tentativas_recuperacao}
+
+❌ STATUS: Monitor NÃO está rodando
+
+⚠️  AÇÃO URGENTE:
+1. Executar: .\\STATUS.bat
+2. Verificar logs em: logs\\monitor_retornos.log
+3. Tentar manualmente: .\\INICIAR.bat
+4. Processar pendentes: .\\PROCESSAR.bat
+
+Arquivos de retorno NÃO estão sendo processados!"""
+                    )
+                
+                # Reset
+                self.em_recuperacao = False
+                schedule.clear('recuperacao')
         
         logger.info("="*80)
     
@@ -245,7 +403,7 @@ class AgendadorVerificacao:
             # Loop infinito verificando agendamentos
             while True:
                 schedule.run_pending()
-                time.sleep(60)  # Verifica a cada minuto
+                time.sleep(30)  # Verifica a cada 30 segundos (para captar agendamentos de 5 min)
         
         except KeyboardInterrupt:
             logger.info("")
