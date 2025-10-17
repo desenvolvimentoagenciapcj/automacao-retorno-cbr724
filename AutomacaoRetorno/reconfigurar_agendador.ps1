@@ -21,9 +21,16 @@ $xmlAgendador = @"
   <Triggers>
     <CalendarTrigger>
       <StartBoundary>2025-10-17T08:30:00</StartBoundary>
-      <ScheduleByDay>
-        <DaysInterval>1</DaysInterval>
-      </ScheduleByDay>
+      <ScheduleByWeek>
+        <DaysOfWeek>
+          <Monday />
+          <Tuesday />
+          <Wednesday />
+          <Thursday />
+          <Friday />
+        </DaysOfWeek>
+        <WeeksInterval>1</WeeksInterval>
+      </ScheduleByWeek>
       <Enabled>true</Enabled>
     </CalendarTrigger>
   </Triggers>
